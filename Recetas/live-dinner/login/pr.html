@@ -1,0 +1,143 @@
+<HTML>
+
+<HEAD>
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+	<!-- Site CSS -->
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">	
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="../css/style.css">
+     <link rel="stylesheet" href="css/estilo2.css">
+</head>
+<BODY background="../images/img-08.jpg">
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="../images/tenedor.png" alt="" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="https://mcflea.000webhostapp.com/live-dinner/index.html">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.html">Acerca de</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="reservation.html">Reservacionn</a>
+								<a class="dropdown-item" href="stuff.html">Staff</a>
+								<a class="dropdown-item" href="gallery.html">Galeria</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="blog.html">blog</a>
+								<a class="dropdown-item" href="blog-details.html">blog Single</a>
+							</div>
+						</li>	
+						<li class="button_user"><a class="button active" href="https://mcflea.000webhostapp.com/live-dinner/loginn/login.html">Login</a><a class="button" href="https://mcflea.000webhostapp.com/live-dinner/loginn/registro.html">Registrarse</a></li>
+			
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+
+<br><br><br><br>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Registro de usuario </h2>
+
+
+   <br><br>
+    <!-- Login Form -->
+    <form method="post"  action="Chefs/chefr.php">
+      <input type="text" id="login" class="fadeIn second" name=nombre1 placeholder="nombre">
+      <input type="text" id="password" class="fadeIn third" name=poblacion1 placeholder="poblacion">
+      <input type="text" id="pob" class="fadeIn third" name=pais1 placeholder="pais">
+      <input type="text" id="login" class="fadeIn second" name=correo1 placeholder="correo">
+      <input type="text" id="us" class="fadeIn third" name=usuario1 placeholder="usuario">
+      <input type="text" id="clave" class="fadeIn third" name=clave1 placeholder="clave">
+    <input type="text" id="claveRepetir" class="fadeIn third"  placeholder="repetir clave"><br>
+           
+    <span class="error" id="obligatorio">Clave obligatoria</span><br>
+        <span class="error" id="clavesNoIguales">Las contraseñas deben ser iguales.</span>
+
+        <br>
+
+      Genero:<select name="genero1">
+      <option value = "Hombre" >Hombre</option>
+      <option value ="Mujer">Mujer</option>
+</select>
+       <input type="hidden" name="tipo1" value="Chef">
+    <!-- <input type="buttonOnClick" class="fadeIn fourth" value="Registrarse">-->
+      <button onClick="evento()"  class="fadeIn fourth"> Registrarse </button>
+
+      
+      
+      
+    </form>
+    
+      </div>
+</div>
+      <br>
+
+
+    <script src="js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmRegistro').submit(function(evento) {
+                evento.preventDefault();
+                $('.error').hide();
+
+           
+
+                let clave = $('#clave').val();
+                if (!clave.length) {
+                    $('#obligatorio').show();
+                    return;
+                }
+
+                let claveRepetir = $('#claveRepetir').val();
+                if (!claveRepetir.length) {
+                    $('#obligatorio').show();
+                    return;
+                }
+
+                if (clave !== claveRepetir) {
+                    $('#clavesNoIguales').show();
+                    return;
+                }
+		
+
+               
+              
+            })
+        });
+    </script>
+
+
+</body>
+</HTML>

@@ -1,0 +1,6 @@
+El archivo que debe abrirse es in.php (Es el index)
+
+Este trabaja con un sistema php, se debe registrar para poder publicar recetas en la pagina
+
+Hay una administracion de estas recetas, en las cuales se puede poner una descripcion y adjuntar
+una imagen a ellas, todo esto se almacena en una bd

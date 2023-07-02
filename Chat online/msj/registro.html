@@ -1,0 +1,127 @@
+<HTML>
+
+<HEAD>
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+	<!-- Site CSS -->
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">	
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/estilo2.css">
+</head>
+<BODY background="../images/img-08.jpg">
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="../images/tenedor.png" alt="" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						
+						<li class="button_user"><a class="button active" href="login.html">Login</a><a class="button" href="https://mcflea.000webhostapp.com/live-dinner/loginn/registro.html">Registrarse</a></li>
+			
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+
+<br><br><br><br>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Registro de usuario </h2>
+
+
+   <br><br>
+    <!-- Login Form -->
+    <form action="#" id="frmRegistro">
+      <input type="text" id="login" class="fadeIn second" name=nombre1 placeholder="nombre">
+      <input type="text" id="us" class="fadeIn third" name=usuario1 placeholder="usuario">
+      <input type="text" id="clave" class="fadeIn third" name=clave1 placeholder="clave">
+      <input type="text" id="claveRepetir" class="fadeIn third" name=clave1 placeholder="repetir clave">
+       <br>
+          <span class="error" id="obligatorio">Todos los campos son obligatorios.</span><br>
+        <span class="error" id="clavesNoIguales">Las contraseñas deben ser iguales.</span>
+
+        <br>
+      <input type="submit" class="fadeIn fourth" value="Registrarse">
+       <p class="warnings" id="warnings"></p>
+    </form>
+      </div>
+</div>
+    
+ 
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmRegistro').submit(function(evento) {
+                evento.preventDefault();
+                $('.error').hide();
+
+             
+
+                let clave = $('#clave').val();
+                if (!clave.length) {
+                    $('#obligatorio').show();
+                    return;
+                }
+
+                let claveRepetir = $('#claveRepetir').val();
+                if (!claveRepetir.length) {
+                    $('#obligatorio').show();
+                    return;
+                }
+
+                if (clave !== claveRepetir) {
+                    $('#clavesNoIguales').show();
+                    return;
+                }
+
+     var formulario = document.getElementById('frmRegistro');
+    var datos = new FormData(frmRegistro);
+
+    console.log(datos)
+    console.log(datos.get('usuario1'))
+    console.log(datos.get('clave1'))
+    console.log(datos.get('nombre1'))
+
+    fetch('reg.php',{
+        method: 'POST',
+        body: datos
+    }).then(datos=>datos.json())
+.then(datosformulario=>{
+console.log(datosformulario)
+
+})
+
+window.location.assign("confirmacion.html");
+     
+                  
+
+            })
+        });
+    </script>
+</body>
+</HTML>

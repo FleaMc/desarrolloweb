@@ -1,0 +1,139 @@
+<HTML>
+
+<HEAD>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="css/estilo2.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Xtra Blog</title>
+	<link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/templatemo-xtra-blog.css" rel="stylesheet">
+</head>
+<BODY background="../images/img-08.jpg">
+    
+<header class="tm-header" id="tm-header">
+        <div class="tm-header-wrapper">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="tm-site-header">
+                <div class="mb-3 mx-auto tm-site-logo"><i class="fas fa-times fa-2x"></i></div>            
+                <h1 class="text-center">WikiDocs</h1>
+            </div>
+            <nav class="tm-nav" id="tm-nav">            
+                <ul>
+                    <li class="tm-nav-item "><a href="index.php" class="tm-nav-link">
+                        <i class="fas fa-home"></i>
+                        Inicio
+                    </a></li>
+                    <li class="tm-nav-item "><a href="login.php" class="tm-nav-link">
+                        <i class="fas fa-user-circle"></i>
+                        Logueo
+                    </a></li>
+                    <li class="tm-nav-item active"><a href="registro.html" class="tm-nav-link">
+                        <i class="fas fa-users"></i>
+                        Registrarse
+                    </a></li>
+                   
+                </ul>
+            </nav>
+           
+            <p class="tm-mb-80 pr-5 text-white">
+                Bienvenido a la wiki
+            </p>
+        </div>
+    </header>
+   <div class="container-fluid">
+        <main class="tm-main">    
+    
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Registro de usuario </h2>
+
+
+   <br><br>
+    <!-- Login Form -->
+    <form action="#" id="frmRegistro">
+      <input type="text" id="nombre" class="fadeIn second" name=nombre1 placeholder="nombre">
+      <input type="text" id="user" class="fadeIn third" name=usuario1 placeholder="usuario">
+      <input type="text" id="clave" class="fadeIn third" name=clave1 placeholder="clave">
+      <input type="text" id="claveRepetir" class="fadeIn third" name=clave2 placeholder="repetir clave">
+                
+       <input type="hidden" name="tipo1" value="Chef">
+       <br>
+          <span class="error" id="obligatorio">Todos los campos son obligatorios.</span><br>
+        <span class="error" id="clavesNoIguales">Las contraseñas deben ser iguales.</span>
+
+        <br>
+      <input type="submit" class="fadeIn fourth" value="Registrarse">
+       <p class="warnings" id="warnings"></p>
+    </form>
+      </div>
+     
+        </main>
+    </div>   
+      
+      
+</div>
+    
+ 
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('.error').hide();
+
+            $('#frmRegistro').submit(function(evento) {
+                evento.preventDefault();
+                $('.error').hide();
+
+             
+
+                let clave = $('#clave').val();
+                if (!clave.length) {
+                    $('#obligatorio').show();
+                    return;
+                }
+
+                let claveRepetir = $('#claveRepetir').val();
+                if (!claveRepetir.length) {
+                    $('#obligatorio').show();
+                    return;
+                }
+
+                if (clave !== claveRepetir) {
+                    $('#clavesNoIguales').show();
+                    return;
+                }
+
+     var formulario = document.getElementById('frmRegistro');
+    var datos = new FormData(frmRegistro);
+
+    console.log(datos)
+    console.log(datos.get('usuario1'))
+    console.log(datos.get('clave1'))
+ console.log(datos.get('nombre1'))   
+
+
+    fetch('regr.php',{
+        method: 'POST',
+        body: datos
+    }).then(datos=>datos.json())
+.then(datosformulario=>{
+console.log(datosformulario)
+
+})
+
+window.location.assign("confirmacion.html");
+     
+                  
+
+            })
+        });
+    </script>
+</body>
+</HTML>

@@ -1,0 +1,3 @@
+Es un sistema de una wiki, se debe registrar para poder publicar articulos
+
+El archivo a abrir es index.php

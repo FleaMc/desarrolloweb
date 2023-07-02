@@ -1,0 +1,23 @@
+<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.html">Acerca de</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Paginas</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="reservation.html">Reservacion</a>
+								<a class="dropdown-item" href="stuff.html">Staff</a>
+								<a class="dropdown-item" href="gallery.html">Galeria</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="blog.html">blog</a>
+								<a class="dropdown-item" href="blog-details.html">blog Solo</a>
+							</div>
+						</li>	
+						<li class="button_user"><a class="button active" href="https://mcflea.000webhostapp.com/live-dinner/loginn/login.html">Login</a><a class="button" href="https://mcflea.000webhostapp.com/live-dinner/loginn/registro.html">Registrarse</a></li>
+			
+						
+					</ul>

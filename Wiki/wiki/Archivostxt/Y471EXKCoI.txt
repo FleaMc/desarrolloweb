@@ -1,0 +1,3 @@
+JMHR revisando....
+
+ La utilidad fundamental de las funciones es no tener que repetir partes de código comunes, que sería necesario repetir varias veces. Esas partes de código comunes se agrupan en funciones y simplemente llamaremos a la función cada vez que necesitamos ejecutar ese código. De esta manera, evitamos la repetición que hace más largo y difícil de entender un programa o desarrollo web.  

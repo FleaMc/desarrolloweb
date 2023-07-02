@@ -1,0 +1,1 @@
+    PHP es un lenguaje de scripting del lado del servidor, el código se interpreta y ejecuta del lado del servidor. Por ejemplo, si agregas el siguiente código a tu archivo. po  

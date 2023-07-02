@@ -1,0 +1,3 @@
+Es un chat online que diseñe, primero hay que registrarse desde el "login.html"
+
+Y posterior a ello se pueden agregar amigos y chatear en tiempo real
